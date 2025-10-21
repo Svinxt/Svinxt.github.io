@@ -10,11 +10,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://svinxt.github.io/" />
   <meta name="theme-color" content="#0f172a" />
-
-  <!-- Font (optional, lightweight) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #0b1020;
@@ -26,137 +23,62 @@
       --card: #0f172a;
       --ring: #334155;
       --link: #93c5fd;
+      --ok: #16a34a;
+      --warn: #f59e0b;
+      --bad: #ef4444;
     }
     @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --panel: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #6d28d9;
-        --accent-2: #0ea5e9;
-        --card: #ffffff;
-        --ring: #e2e8f0;
-        --link: #2563eb;
-      }
+      :root { --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --accent:#6d28d9; --accent-2:#0ea5e9; --card:#ffffff; --ring:#e2e8f0; --link:#2563eb; }
     }
-    [data-theme="light"] {
-      --bg: #f8fafc;
-      --panel: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #6d28d9;
-      --accent-2: #0ea5e9;
-      --card: #ffffff;
-      --ring: #e2e8f0;
-      --link: #2563eb;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,0.15), transparent 50%),
-                  radial-gradient(1000px 500px at -10% 10%, rgba(34,211,238,0.14), transparent 50%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-
-    /* Header */
-    .nav {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 0;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-    .logo {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 8px 30px rgba(124,58,237,0.35);
-    }
-    .brand h1 { margin: 0; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.2px; }
-    .muted { color: var(--muted); }
-
-    .navlinks { display: flex; gap: 14px; }
-    .navlinks a {
-      text-decoration: none; color: var(--text); padding: 8px 12px; border-radius: 10px;
-    }
-    .navlinks a:hover { background: var(--panel); outline: 1px solid var(--ring); }
-
-    .btn {
-      appearance: none; border: none; cursor: pointer;
-      background: var(--panel); color: var(--text); border-radius: 10px;
-      padding: 8px 12px; font-weight: 600; outline: 1px solid var(--ring);
-    }
-    .btn:hover { filter: brightness(1.1); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      outline: none;
-    }
-
-    /* Hero */
-    .hero {
-      margin-top: 20px;
-      padding: 36px;
-      background: rgba(16, 25, 54, 0.55);
-      backdrop-filter: saturate(120%) blur(6px);
-      border: 1px solid var(--ring);
-      border-radius: 18px;
-      display: grid; gap: 16px;
-    }
-    .hero h2 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin: 0; line-height: 1.15; }
-    .hero p { margin: 0; color: var(--muted); max-width: 65ch; }
-    .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
-
-    /* Sections */
-    section { margin-top: 40px; }
-    .section-title {
-      font-size: 1.1rem; font-weight: 800; letter-spacing: 0.25px; margin: 0 0 14px;
-    }
-
-    /* Cards grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-    .card {
-      grid-column: span 12;
-      background: var(--card);
-      border: 1px solid var(--ring);
-      border-radius: 16px;
-      padding: 18px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(2, 8, 23, .25); }
-    .card h3 { margin: 0 0 6px; font-size: 1rem; }
-    .card p { margin: 0 0 12px; color: var(--muted); }
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      font-size: 12px; padding: 4px 8px; border-radius: 999px;
-      background: rgba(124,58,237,.15); border: 1px solid var(--ring);
-    }
-    .card-actions { display: flex; gap: 10px; }
-
-    /* 2/3-column at larger screens */
-    @media (min-width: 720px) {
-      .card { grid-column: span 6; }
-    }
-    @media (min-width: 1000px) {
-      .card { grid-column: span 4; }
-    }
-
-    /* Footer */
-    footer {
-      margin: 48px 0 24px; padding-top: 16px;
-      border-top: 1px dashed var(--ring); color: var(--muted); font-size: 0.95rem;
-      display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
-    }
-    a { color: var(--link); }
-    .social { display: flex; gap: 12px; }
+    [data-theme="light"] { --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --accent:#6d28d9; --accent-2:#0ea5e9; --card:#ffffff; --ring:#e2e8f0; --link:#2563eb; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.15), transparent 50%), radial-gradient(1000px 500px at -10% 10%, rgba(34,211,238,.14), transparent 50%), var(--bg); color:var(--text); line-height:1.6}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(124,58,237,.35)}
+    .brand h1{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:.2px}
+    .muted{color:var(--muted)}
+    .navlinks{display:flex;gap:14px}
+    .navlinks a{ text-decoration:none;color:var(--text);padding:8px 12px;border-radius:10px }
+    .navlinks a:hover{background:var(--panel);outline:1px solid var(--ring)}
+    .btn{appearance:none;border:none;cursor:pointer;background:var(--panel);color:var(--text);border-radius:10px;padding:8px 12px;font-weight:600;outline:1px solid var(--ring)}
+    .btn:hover{filter:brightness(1.1)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));outline:none}
+    .hero{margin-top:20px;padding:36px;background:rgba(16,25,54,.55);backdrop-filter:saturate(120%) blur(6px);border:1px solid var(--ring);border-radius:18px;display:grid;gap:16px}
+    .hero h2{font-size:clamp(1.6rem,2vw + 1rem,2.4rem);margin:0;line-height:1.15}
+    .hero p{margin:0;color:var(--muted);max-width:65ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    section{margin-top:40px}
+    .section-title{font-size:1.1rem;font-weight:800;letter-spacing:.25px;margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:18px;transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(2,8,23,.25)}
+    .card h3{margin:0 0 6px;font-size:1rem}
+    .card p{margin:0 0 12px;color:var(--muted)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(124,58,237,.15);border:1px solid var(--ring)}
+    .card-actions{display:flex;gap:10px;flex-wrap:wrap}
+    @media (min-width:720px){.card{grid-column:span 6}}
+    @media (min-width:1000px){.card{grid-column:span 4}}
+    footer{margin:48px 0 24px;padding-top:16px;border-top:1px dashed var(--ring);color:var(--muted);font-size:.95rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    a{color:var(--link)}
+    .social{display:flex;gap:12px}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--ring);border-radius:999px;padding:6px 10px;font-size:12px}
+    .dot{width:8px;height:8px;border-radius:999px}
+    .dot.ok{background:var(--ok)}.dot.warn{background:var(--warn)}.dot.bad{background:var(--bad)}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .filter-btn{padding:6px 10px;border-radius:999px;border:1px solid var(--ring);background:var(--panel);cursor:pointer}
+    .filter-btn[aria-pressed="true"]{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none}
+    details.faq{border:1px solid var(--ring);border-radius:12px;background:var(--card);padding:12px}
+    details.faq+details.faq{margin-top:10px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:.85em; background:var(--panel); border:1px solid var(--ring); padding:2px 6px; border-radius:6px}
+    .timeline{position:relative;padding-left:20px}
+    .timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--ring)}
+    .t-item{position:relative;margin:0 0 12px 0}
+    .t-item::before{content:"";position:absolute;left:-14px;top:.45em;width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .kbd-help{font-size:.92rem;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -169,10 +91,13 @@
           <div class="muted">Projects • Experiments • Updates</div>
         </div>
       </a>
-      <div style="display:flex; gap:10px; align-items:center;">
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+        <div class="pill" title="Build status"><span class="dot ok" aria-hidden="true"></span><span>Live</span></div>
         <nav class="navlinks" aria-label="Primary">
           <a href="#projects">Projects</a>
-          <a href="#about">About</a>
+          <a href="#now">Now</a>
+          <a href="#changelog">Changelog</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
         <button id="themeToggle" class="btn" aria-label="Toggle theme">🌓</button>
@@ -188,76 +113,73 @@
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/Svinxt" target="_blank" rel="noopener">View GitHub</a>
         <a class="btn" href="#projects">See Projects</a>
+        <button class="btn" id="copyEmail" data-email="you@example.com" aria-live="polite">Copy Email</button>
       </div>
+      <div class="kbd-help">Tip: Press <span class="kbd">/</span> to focus search • <span class="kbd">t</span> to toggle theme</div>
     </section>
 
+    <!-- Projects with filter & search -->
     <section id="projects" aria-labelledby="projects-title">
       <h2 class="section-title" id="projects-title">Featured Projects</h2>
+      <div class="filters" role="toolbar" aria-label="Project filters">
+        <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="lua">Lua</button>
+        <button class="filter-btn" data-filter="swift">Swift</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+      <div style="margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+        <input id="search" type="search" placeholder="Search projects…" aria-label="Search projects" style="flex:1; min-width:220px; padding:10px 12px; border-radius:10px; border:1px solid var(--ring); background:var(--panel); color:var(--text)">
+        <span class="muted" id="resultCount" aria-live="polite"></span>
+      </div>
+      <div id="projectGrid" class="grid" style="margin-top:14px"></div>
+    </section>
+
+    <!-- Now / Timeline -->
+    <section id="now" aria-labelledby="now-title">
+      <h2 class="section-title" id="now-title">What I’m Doing Now</h2>
       <div class="grid">
-        <!-- Card 1 -->
-        <article class="card">
-          <h3>Cruel Clicker</h3>
-          <p>Windows auto-clicker with a slick UI, performance modes, and hotkey support.</p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Win32 API</span>
-            <span class="tag">Tkinter</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="https://github.com/Svinxt" target="_blank" rel="noopener">Repo</a>
-            <a class="btn" href="#" aria-disabled="true">Docs (soon)</a>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <h3>Exalted RP Tools</h3>
-          <p>Custom FiveM/QB scripts and utilities for server management and gameplay polish.</p>
-          <div class="tags">
-            <span class="tag">Lua</span>
-            <span class="tag">FiveM</span>
-            <span class="tag">QB-Core</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="https://github.com/Svinxt" target="_blank" rel="noopener">Repo</a>
-            <a class="btn" href="#" aria-disabled="true">Demo (soon)</a>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-          <h3>Recipe Organizer (iOS)</h3>
-          <p>A SwiftUI app for storing recipes, planning meals, and sharing community posts.</p>
-          <div class="tags">
-            <span class="tag">SwiftUI</span>
-            <span class="tag">iOS</span>
-            <span class="tag">AI Assist</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="https://github.com/Svinxt" target="_blank" rel="noopener">Repo</a>
-            <a class="btn" href="#" aria-disabled="true">TestFlight (soon)</a>
+        <article class="card" style="grid-column:span 12">
+          <div class="timeline">
+            <div class="t-item"><strong>Oct 2025:</strong> Polishing portfolio, adding filters & search to the project gallery.</div>
+            <div class="t-item"><strong>Fall 2025:</strong> Working on Exalted RP tooling (QB-Core/Lua) and a SwiftUI Recipe Organizer prototype.</div>
+            <div class="t-item"><strong>2025:</strong> Building a Windows auto-clicker (Cruel Clicker) with clean UI & hotkeys.</div>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
-      <h2 class="section-title" id="about-title">About</h2>
-      <p class="muted">
-        Developer focused on practical tools and clean UX. I like tight feedback loops, readable code,
-        and shipping small improvements regularly.
-      </p>
+    <!-- Changelog -->
+    <section id="changelog" aria-labelledby="changelog-title">
+      <h2 class="section-title" id="changelog-title">Changelog</h2>
+      <div class="grid" id="changelogList"></div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 class="section-title" id="faq-title">FAQ</h2>
+      <details class="faq">
+        <summary><strong>Can I use your projects?</strong></summary>
+        <p class="muted">Most repos are MIT or similar. Check the license in each repository.</p>
+      </details>
+      <details class="faq">
+        <summary><strong>Do you take feature requests?</strong></summary>
+        <p class="muted">Yes—open an issue on GitHub or ping me on Discord.</p>
+      </details>
+      <details class="faq">
+        <summary><strong>How is this site built?</strong></summary>
+        <p class="muted">Vanilla HTML/CSS/JS, deployed via GitHub Pages. No frameworks required.</p>
+      </details>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title">Contact</h2>
-      <p class="muted">The fastest way to reach me is via GitHub.</p>
+      <p class="muted">The fastest way to reach me is via GitHub. You can also email or DM.</p>
       <div class="social">
         <a href="https://github.com/Svinxt" target="_blank" rel="noopener">GitHub</a>
-        <!-- Add your links: -->
-        <!-- <a href="https://twitter.com/..." target="_blank" rel="noopener">Twitter</a>
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="https://linkedin.com/in/..." target="_blank" rel="noopener">LinkedIn</a> -->
+        <a id="emailLink" href="mailto:you@example.com">Email</a>
+        <a href="#" aria-disabled="true" title="Add your Discord invite">Discord</a>
       </div>
     </section>
 
@@ -268,21 +190,131 @@
   </div>
 
   <script>
-    // Year
+    // ---- Year ----
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle (persist to localStorage)
+    // ---- Theme toggle (& shortcut "t") ----
     const root = document.documentElement;
-    const btn = document.getElementById('themeToggle');
+    const themeBtn = document.getElementById('themeToggle');
     const saved = localStorage.getItem('sv_theme');
     if (saved) root.setAttribute('data-theme', saved);
-
-    btn.addEventListener('click', () => {
+    function toggleTheme(){
       const isLight = root.getAttribute('data-theme') === 'light';
       const next = isLight ? '' : 'light';
-      if (next) root.setAttribute('data-theme', next);
-      else root.removeAttribute('data-theme');
+      if (next) root.setAttribute('data-theme', next); else root.removeAttribute('data-theme');
       localStorage.setItem('sv_theme', next);
+    }
+    themeBtn.addEventListener('click', toggleTheme);
+    window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='t' && !e.metaKey && !e.ctrlKey){ e.preventDefault(); toggleTheme(); } });
+
+    // ---- Copy Email button ----
+    const copyBtn = document.getElementById('copyEmail');
+    const email = copyBtn.dataset.email;
+    copyBtn.addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(email); copyBtn.textContent='Copied ✅'; setTimeout(()=>copyBtn.textContent='Copy Email', 1500);}catch{ copyBtn.textContent=email; }
+    });
+
+    // ---- Email link sync ----
+    document.getElementById('emailLink').href = `mailto:${email}`;
+
+    // ---- Projects data ----
+    const projects = [
+      {
+        name: 'Cruel Clicker',
+        desc: 'Windows auto-clicker with slick UI, performance modes, and hotkeys.',
+        tags: ['python','win32','tkinter'],
+        links: [{label:'Repo', href:'https://github.com/Svinxt'}]
+      },
+      {
+        name: 'Exalted RP Tools',
+        desc: 'Custom FiveM/QB scripts and utilities for server management & polish.',
+        tags: ['lua','fivem','qb-core'],
+        links: [{label:'Repo', href:'https://github.com/Svinxt'}]
+      },
+      {
+        name: 'Recipe Organizer (iOS)',
+        desc: 'SwiftUI app for storing recipes, planning meals, and community posts.',
+        tags: ['swift','swiftui','ios'],
+        links: [{label:'Repo', href:'https://github.com/Svinxt'}]
+      },
+      {
+        name: 'Portfolio Site',
+        desc: 'This very site. Clean, fast, and framework-free.',
+        tags: ['web','vanilla'],
+        links: [{label:'Source', href:'https://github.com/Svinxt/Svinxt.github.io'}]
+      }
+    ];
+
+    // ---- Render projects ----
+    const grid = document.getElementById('projectGrid');
+    function renderProjects(list){
+      grid.innerHTML = '';
+      list.forEach(p=>{
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+          <div class="card-actions">${p.links.map(l=>`<a class="btn" target="_blank" rel="noopener" href="${l.href}">${l.label}</a>`).join('')}</div>
+        `;
+        grid.appendChild(card);
+      });
+      resultCount.textContent = `${list.length} project${list.length!==1?'s':''}`;
+    }
+
+    // ---- Filters & search (& shortcut "/" to focus) ----
+    const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+    const searchInput = document.getElementById('search');
+    const resultCount = document.getElementById('resultCount');
+
+    function currentFilter(){
+      const active = filterButtons.find(b=>b.getAttribute('aria-pressed')==='true');
+      return active ? active.dataset.filter : 'all';
+    }
+
+    function applyFilters(){
+      const q = searchInput.value.trim().toLowerCase();
+      const f = currentFilter();
+      const filtered = projects.filter(p=>{
+        const matchesTag = f==='all' || p.tags.includes(f);
+        const hay = `${p.name} ${p.desc} ${p.tags.join(' ')}`.toLowerCase();
+        const matchesQuery = !q || hay.includes(q);
+        return matchesTag && matchesQuery;
+      });
+      renderProjects(filtered);
+    }
+
+    filterButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterButtons.forEach(b=>b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='/' && !e.metaKey && !e.ctrlKey){ e.preventDefault(); searchInput.focus(); }
+    });
+
+    // initial render
+    renderProjects(projects);
+
+    // ---- Changelog (edit here) ----
+    const changes = [
+      { date:'2025-10-21', title:'Site revamp', items:['Added filters & search to projects','New Now/Timeline and FAQ sections','Copy email & keyboard shortcuts'] },
+      { date:'2025-10-20', title:'Initial publish', items:['Shipped the first minimal portfolio page'] }
+    ];
+    const cl = document.getElementById('changelogList');
+    changes.forEach(c=>{
+      const card = document.createElement('article');
+      card.className='card';
+      card.innerHTML = `
+        <h3>${c.title} <span class="muted" style="font-weight:400">— ${c.date}</span></h3>
+        <ul style="margin:8px 0 0 18px">${c.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+      `;
+      cl.appendChild(card);
     });
   </script>
 </body>
