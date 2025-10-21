@@ -1,3 +1,59 @@
-theme: jekyll-theme-minimal
-title: Svinxt's homepage
-description: Bookmark this to keep an eye on my project updates!
+# -------------------------------
+# GitHub Pages Configuration File
+# -------------------------------
+
+# Site settings
+title: "Svinxt"
+description: "Personal portfolio, projects, and experiments."
+url: "https://svinxt.github.io"
+baseurl: ""  # Leave blank unless the site is in a subfolder
+
+# Author info
+author:
+  name: "Svinxt"
+  email: "svinxtt@gmail.com"
+  github: "Svinxt"
+  twitter: "Svinxt"
+  linkedin: "Svinxt"
+
+# Theme settings
+theme: minima  # You can change this to another Jekyll theme, e.g. "jekyll-theme-cayman"
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation links
+nav_links:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+
+# Build settings
+permalink: pretty
+timezone: "America/New_York"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+
+# Social links (for themes that support them)
+social_links:
+  github: "https://github.com/Svinxt"
+  instagram: "https://instagram.com/"
+  twitter: "https://twitter.com/"
+  linkedin: "https://linkedin.com/in/"
+
+# SEO
+title_separator: "|"
+google_analytics: "G-XXXXXXXXXX"  # Replace with your Google Analytics ID if used
+
+# Footer
+footer: "© 2025 Svinxt. All rights reserved."
